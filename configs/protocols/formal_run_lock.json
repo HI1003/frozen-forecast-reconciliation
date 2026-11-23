@@ -1,0 +1,54 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "dm_reference": "BUN",
+  "dm_multiplicity": "holm",
+  "dm_variance_estimator": "bartlett_hac",
+  "dm_hac_lag_policy": "h_minus_1",
+  "dm_family_keys": [
+    "dataset",
+    "base",
+    "step"
+  ],
+  "dm_confirmatory_methods": [
+    "base",
+    "ols",
+    "wls_var",
+    "wls_struct",
+    "mint_shrink",
+    "BU",
+    "BUL",
+    "TD",
+    "TDL",
+    "TDN",
+    "HYB",
+    "HYBL",
+    "HYBN"
+  ],
+  "checkpoint_revisions": {
+    "chronos2": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+    "timesfm25": "1d952420fba87f3c6dee4f240de0f1a0fbc790e3"
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "packages": {
+      "PyYAML": "6.0.3",
+      "chronos-forecasting": "2.3.1",
+      "numpy": "2.4.6",
+      "pandas": "3.0.5",
+      "scipy": "1.17.1",
+      "timesfm": "2.0.2",
+      "torch": "2.7.1+cu126",
+      "transformers": "4.57.6"
+    }
+  },
+  "bootstrap": {
+    "n_boot": 2000,
+    "alpha": 0.05,
+    "seed": 42,
+    "block_length": "predict_len"
+  }
+}

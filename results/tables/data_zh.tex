@@ -1,0 +1,19 @@
+% 中文展示；直接复制当前英文表的数值，未从舍入值重新计算统计。
+\begin{table}[!htbp]
+\centering
+\caption{数据集层级、预测长度与时间顺序划分。}
+\label{tab:data}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+\toprule
+数据集 & 观测数 & 各层节点数 & \shortstack{上下文/\\输出} & 步长 & \multicolumn{3}{c}{预测起点数} \\
+\cmidrule(lr){6-8}
+& & & & & 训练 & 验证 & 测试 \\
+\midrule
+Walmart & 1,941 & 1/3/10/30 & 365 / 14 & 1, 7, 14 & 1,174 & 181 & 182 \\
+GEFCom2017F & 61,344 & 1/2/14/141 & 512 / 24 & 1, 6, 24 & 48,390 & 6,086 & 6,112 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize 观测数为每条序列的时间点数；节点数按顶层至底层排列；长度及步长的单位为天（Walmart）和小时（GEFCom2017F）。\end{minipage}
+\end{table}

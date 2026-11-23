@@ -1,0 +1,19 @@
+% Generated from full precision by make_compact_ijf_artifacts.py.
+\begin{table}[!htbp]
+\centering
+\caption{Dataset hierarchies, forecast lengths and chronological splits.}
+\label{tab:data}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+\toprule
+Dataset & Observations & Nodes by level & \shortstack{Context /\\output} & Leads & \multicolumn{3}{c}{Forecast origins} \\
+\cmidrule(lr){6-8}
+& & & & & Train & Validation & Test \\
+\midrule
+Walmart & 1,941 & 1/3/10/30 & 365 / 14 & 1, 7, 14 & 1,174 & 181 & 182 \\
+GEFCom2017F & 61,344 & 1/2/14/141 & 512 / 24 & 1, 6, 24 & 48,390 & 6,086 & 6,112 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize Observations are time points per series; node counts run from top to bottom. Context lengths, output lengths and leads are in days for Walmart and hours for GEFCom2017F.\end{minipage}
+\end{table}

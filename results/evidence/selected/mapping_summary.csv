@@ -1,0 +1,4 @@
+family,wape_wins,wape_reduction,mase_wins,mase_reduction
+bottom_mlp_residual,12,25.95051297946812,12,30.930671276854838
+td_features_mlp_residual,12,15.538081726201034,12,24.630093547991606
+allnode_hyb_residual,12,23.611684018992023,12,30.156283204378735

@@ -1,0 +1,27 @@
+# Walmart M5 subset: 4 levels (total / state / store / category), 44 nodes, daily.
+name: walmart
+data_dir: Data/Walmart_4level
+values_csv: Walmart_processed_without_exog.csv
+timestamp_col: Date
+freq: D
+fill_gaps: false          # processed input must already be a complete daily grid
+
+eval_steps: [1, 7, 14]
+predict_len: 14
+context_len: 365          # real observations fed to every base model (days)
+
+# Strict chronological 80/10/10. Every base model is a frozen TSFM that takes
+# no gradient update here, so the whole training segment is available for
+# fitting reconciliation heads and classical error statistics.
+train_frac: 0.8
+val_frac: 0.1
+origin_stride: {train: 1, val: 1, test: 1}
+nonneg: true
+
+head_train:
+  lr: 1.0e-3
+  batch_size: 128
+  max_epochs: 200
+  patience: 30
+  hidden: [256, 128]
+  dropout: 0.1

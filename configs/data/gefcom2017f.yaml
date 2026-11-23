@@ -1,0 +1,46 @@
+# GEFCom2017 Final Match: 4 levels (Total / I-zone / E-zone / bottom), 158 nodes, hourly.
+name: gefcom2017f
+data_dir: Data/Gefcom2017F_4level
+values_csv: load_processed.csv
+timestamp_col: timestamp
+freq: h
+fill_gaps: false          # processed input must already be a complete hourly grid
+
+# The persisted 158-node table is itself canonical: exact timestamp + node
+# order, and all 17 aggregates equal the updated S applied to 141 bottoms.
+require_exact_source_schema: true
+require_source_coherence: true
+values_fingerprint: "e933f3d0876ac5d5bf654a370d5745e3"
+
+# Seven spring-DST hours were filled upstream by two-sided time interpolation.
+# Origins t in [g-H, g] are excluded for every imputed timestamp g, preventing
+# an imputed value from being either a forecast target or the last context row.
+excluded_imputed_timestamps:
+  - "2005-04-03 01:00:00"
+  - "2006-04-02 01:00:00"
+  - "2007-03-11 01:00:00"
+  - "2008-03-09 01:00:00"
+  - "2009-03-08 01:00:00"
+  - "2010-03-14 01:00:00"
+  - "2011-03-13 01:00:00"
+
+eval_steps: [1, 6, 24]
+predict_len: 24
+context_len: 512          # real observations fed to every base model (hours)
+
+# Strict chronological 80/10/10. Every base model is a frozen TSFM that takes
+# no gradient update here, so the whole training segment is available for
+# fitting reconciliation heads and classical error statistics.
+train_frac: 0.8
+val_frac: 0.1
+# Dense rolling origins avoid aliasing the 24-hour and 168-hour calendar cycles.
+origin_stride: {train: 1, val: 1, test: 1}
+nonneg: true
+
+head_train:
+  lr: 1.0e-3
+  batch_size: 128
+  max_epochs: 200
+  patience: 30
+  hidden: [256, 128]
+  dropout: 0.1

@@ -1,0 +1,74 @@
+% Generated from locked original-precision metrics; no experiment or test changes.
+\begin{table}[!htbp]
+\centering
+\begingroup
+\renewcommand{\baselinestretch}{1}\small
+\caption{All-level test WAPE and sMASE across twelve forecasting settings.}
+\label{tab:main_wape}
+\fontsize{8.5}{10}\selectfont
+\renewcommand{\arraystretch}{0.95}
+\setlength{\tabcolsep}{2pt}
+\definecolor{accuracybest}{RGB}{252,232,207}
+\definecolor{accuracysecond}{RGB}{237,237,237}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l*{12}{r}@{}}
+\toprule
+\multicolumn{13}{l}{\textit{(a) Walmart}} \\
+Method & \multicolumn{6}{c}{Chronos-2} & \multicolumn{6}{c}{TimesFM 2.5} \\
+\cmidrule(lr){2-7}\cmidrule(l){8-13}
+ & \multicolumn{3}{c}{WAPE (\%) $\downarrow$} & \multicolumn{3}{c}{sMASE $\downarrow$} & \multicolumn{3}{c}{WAPE (\%) $\downarrow$} & \multicolumn{3}{c}{sMASE $\downarrow$} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(l){11-13}
+ & $h=1$ & $h=7$ & $h=14$ & $h=1$ & $h=7$ & $h=14$ & $h=1$ & $h=7$ & $h=14$ & $h=1$ & $h=7$ & $h=14$ \\
+\midrule
+Unreconciled & 8.129 & 8.598 & 9.180 & 0.868 & 0.920 & 0.969 & 7.654 & 8.312 & 8.855 & 0.840 & 0.899 & 0.949 \\
+OLS & 8.336 & 8.782 & 9.390 & 0.933 & 0.984 & 1.044 & 7.736 & 8.433 & 8.984 & 0.874 & 0.953 & 1.002 \\
+WLS-struct & 8.023 & 8.471 & 9.100 & 0.889 & 0.939 & 0.996 & 7.568 & 8.195 & 8.738 & 0.847 & 0.912 & 0.959 \\
+WLS-var & 7.889 & 8.340 & 8.956 & 0.865 & 0.915 & 0.966 & 7.507 & 8.095 & 8.658 & 0.836 & 0.893 & 0.943 \\
+MinT-shrink & \cellcolor{accuracybest}\textbf{7.629} & 8.172 & 8.860 & \cellcolor{accuracybest}\textbf{0.850} & \cellcolor{accuracysecond}\underline{0.904} & 0.957 & 7.452 & 8.020 & 8.733 & \cellcolor{accuracysecond}\underline{0.831} & 0.890 & 0.946 \\
+MO-L1 & 8.176 & 8.693 & 9.365 & 0.887 & 0.940 & 0.998 & 7.741 & 8.350 & 8.764 & 0.854 & 0.914 & 0.951 \\
+MO-L2 & 7.966 & 8.391 & 8.958 & 0.872 & 0.923 & 0.970 & 7.544 & 8.173 & 8.688 & 0.840 & 0.901 & 0.949 \\
+RF & 8.673 & 9.332 & 9.895 & 0.978 & 1.039 & 1.088 & 8.309 & 9.351 & 9.713 & 0.949 & 1.039 & 1.081 \\
+LightGBM & 8.925 & 9.754 & 9.845 & 1.020 & 1.097 & 1.109 & 8.784 & 9.776 & 10.010 & 1.016 & 1.103 & 1.129 \\
+Elasso (adapted) & 11.095 & 9.894 & 10.462 & 1.351 & 1.236 & 1.292 & 9.564 & 9.840 & 9.860 & 1.225 & 1.240 & 1.228 \\
+\midrule
+BU & \cellcolor{accuracysecond}\underline{7.777} & 8.247 & 8.896 & \cellcolor{accuracysecond}\underline{0.859} & 0.910 & 0.962 & 7.473 & 8.043 & 8.686 & 0.834 & 0.889 & 0.944 \\
+BUL & 7.884 & \cellcolor{accuracysecond}\underline{8.138} & \cellcolor{accuracysecond}\underline{8.545} & 0.875 & 0.917 & \cellcolor{accuracysecond}\underline{0.949} & \cellcolor{accuracysecond}\underline{7.451} & \cellcolor{accuracysecond}\underline{7.934} & \cellcolor{accuracysecond}\underline{8.311} & 0.837 & \cellcolor{accuracysecond}\underline{0.888} & 0.926 \\
+BUN & 7.839 & \cellcolor{accuracybest}\textbf{7.999} & \cellcolor{accuracybest}\textbf{8.478} & 0.863 & \cellcolor{accuracybest}\textbf{0.897} & \cellcolor{accuracybest}\textbf{0.939} & \cellcolor{accuracybest}\textbf{7.401} & \cellcolor{accuracybest}\textbf{7.871} & \cellcolor{accuracybest}\textbf{8.285} & \cellcolor{accuracybest}\textbf{0.830} & \cellcolor{accuracybest}\textbf{0.880} & \cellcolor{accuracybest}\textbf{0.918} \\
+TD & 8.384 & 8.853 & 9.484 & 0.905 & 0.952 & 1.008 & 7.679 & 8.429 & 9.037 & 0.847 & 0.918 & 0.969 \\
+TDL & 8.477 & 9.002 & 9.680 & 0.921 & 0.979 & 1.040 & 7.815 & 8.579 & 9.179 & 0.864 & 0.937 & 0.984 \\
+TDN & 8.418 & 8.887 & 9.520 & 0.913 & 0.962 & 1.019 & 7.716 & 8.494 & 9.136 & 0.855 & 0.925 & 0.977 \\
+HYB & 8.013 & 8.459 & 9.094 & 0.874 & 0.923 & 0.977 & 7.555 & 8.166 & 8.712 & 0.839 & 0.898 & 0.945 \\
+HYBL & 8.251 & 8.568 & 8.612 & 0.904 & 0.947 & 0.952 & 7.547 & 8.061 & 8.381 & 0.842 & 0.896 & 0.928 \\
+HYBN$\dagger$ & 8.057 & 8.192 & 8.615 & 0.880 & 0.911 & 0.950 & 7.574 & 8.076 & 8.323 & 0.842 & 0.894 & \cellcolor{accuracysecond}\underline{0.922} \\
+\midrule
+\multicolumn{13}{l}{\textit{(b) GEFCom2017F}} \\
+Method & \multicolumn{6}{c}{Chronos-2} & \multicolumn{6}{c}{TimesFM 2.5} \\
+\cmidrule(lr){2-7}\cmidrule(l){8-13}
+ & \multicolumn{3}{c}{WAPE (\%) $\downarrow$} & \multicolumn{3}{c}{sMASE $\downarrow$} & \multicolumn{3}{c}{WAPE (\%) $\downarrow$} & \multicolumn{3}{c}{sMASE $\downarrow$} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(l){11-13}
+ & $h=1$ & $h=6$ & $h=24$ & $h=1$ & $h=6$ & $h=24$ & $h=1$ & $h=6$ & $h=24$ & $h=1$ & $h=6$ & $h=24$ \\
+\midrule
+Unreconciled & 1.757 & 5.628 & 8.554 & 0.209 & 0.586 & 0.852 & 1.730 & 6.872 & 10.123 & 0.210 & 0.684 & 0.964 \\
+OLS & 1.847 & 5.728 & 8.662 & 0.265 & 0.662 & 0.938 & 1.753 & 7.005 & 10.395 & 0.228 & 0.780 & 1.155 \\
+WLS-struct & 1.717 & 5.600 & 8.517 & 0.226 & 0.606 & 0.873 & 1.720 & 6.838 & 10.057 & 0.214 & 0.716 & 1.036 \\
+WLS-var & 1.646 & 5.562 & 8.489 & \cellcolor{accuracysecond}\underline{0.208} & 0.585 & 0.851 & 1.717 & 6.720 & 9.758 & 0.209 & 0.683 & 0.963 \\
+MinT-shrink & 1.644 & 5.574 & 8.535 & \cellcolor{accuracysecond}\underline{0.208} & 0.585 & 0.853 & 1.709 & 6.725 & 9.549 & \cellcolor{accuracysecond}\underline{0.208} & 0.683 & 0.952 \\
+MO-L1 & 1.793 & 5.646 & 8.586 & 0.217 & 0.591 & 0.859 & 1.731 & 6.941 & 10.282 & 0.210 & 0.698 & 1.002 \\
+MO-L2 & 1.705 & 5.595 & 8.517 & 0.214 & 0.590 & 0.856 & 1.717 & 6.855 & 10.132 & 0.210 & 0.696 & 0.999 \\
+RF & \cellcolor{accuracysecond}\underline{1.628} & 5.607 & 8.762 & 0.214 & 0.607 & 0.888 & 1.719 & 6.651 & 9.760 & 0.218 & 0.696 & 0.982 \\
+LightGBM & 1.717 & 5.781 & 8.941 & 0.231 & 0.629 & 0.913 & 1.811 & 6.707 & 9.794 & 0.237 & 0.707 & 0.992 \\
+Elasso (adapted) & 1.895 & 6.776 & 9.930 & 0.247 & 0.731 & 1.015 & 2.745 & 9.211 & 10.814 & 0.298 & 0.955 & 1.142 \\
+\midrule
+BU & 1.635 & 5.568 & 8.494 & \cellcolor{accuracysecond}\underline{0.208} & 0.585 & 0.851 & 1.724 & 6.703 & 9.690 & 0.210 & 0.682 & 0.960 \\
+BUL & 1.638 & 5.537 & 8.671 & 0.210 & 0.583 & 0.857 & 1.995 & 6.773 & 9.578 & 0.229 & 0.690 & 0.950 \\
+BUN & \cellcolor{accuracybest}\textbf{1.580} & \cellcolor{accuracybest}\textbf{5.265} & \cellcolor{accuracysecond}\underline{8.434} & \cellcolor{accuracybest}\textbf{0.204} & \cellcolor{accuracybest}\textbf{0.562} & \cellcolor{accuracysecond}\underline{0.840} & \cellcolor{accuracybest}\textbf{1.632} & \cellcolor{accuracybest}\textbf{6.363} & \cellcolor{accuracybest}\textbf{9.303} & \cellcolor{accuracybest}\textbf{0.204} & \cellcolor{accuracybest}\textbf{0.654} & \cellcolor{accuracybest}\textbf{0.927} \\
+TD & 1.809 & 5.665 & 8.602 & 0.217 & 0.591 & 0.856 & 1.738 & 6.918 & 10.219 & 0.211 & 0.696 & 0.994 \\
+TDL & 2.024 & 5.989 & 9.050 & 0.264 & 0.669 & 0.965 & 1.980 & 7.284 & 10.584 & 0.262 & 0.790 & 1.097 \\
+TDN & 1.838 & 5.697 & 8.674 & 0.225 & 0.598 & 0.869 & 1.767 & 6.975 & 10.251 & 0.217 & 0.705 & 1.003 \\
+HYB & 1.704 & 5.579 & 8.500 & 0.211 & 0.585 & 0.851 & 1.714 & 6.814 & 10.014 & 0.209 & 0.689 & 0.982 \\
+HYBL & 1.687 & 5.532 & 8.702 & 0.220 & 0.586 & 0.859 & 1.940 & 6.840 & \cellcolor{accuracysecond}\underline{9.494} & 0.225 & 0.695 & \cellcolor{accuracysecond}\underline{0.946} \\
+HYBN$\dagger$ & 1.637 & \cellcolor{accuracysecond}\underline{5.299} & \cellcolor{accuracybest}\textbf{8.397} & \cellcolor{accuracysecond}\underline{0.208} & \cellcolor{accuracysecond}\underline{0.563} & \cellcolor{accuracybest}\textbf{0.837} & \cellcolor{accuracysecond}\underline{1.643} & \cellcolor{accuracysecond}\underline{6.444} & 10.041 & \cellcolor{accuracybest}\textbf{0.204} & \cellcolor{accuracysecond}\underline{0.658} & 0.984 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize For linear and MLP heads, RF and LightGBM, metrics are computed separately for seeds 42, 43 and 44, then averaged arithmetically; predictions are not averaged. Elasso reports its selected single fit; base forecasts and deterministic methods report their corresponding metrics. Displayed values are rounded to three decimal places. The best displayed value in each column is bold on pale orange; the second-best distinct displayed value is underlined on pale gray; displayed ties share a mark. Leads are days for Walmart and hours for GEFCom2017F. $\dagger$HYBN uses $\lambda=0$; mean coherence nMAE is 0.345\%.\end{minipage}
+\endgroup
+\end{table}

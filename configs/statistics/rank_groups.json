@@ -1,0 +1,20 @@
+{
+  "analysis_id": "overall-rank-groups-exploratory-v1",
+  "evidence_status": "post_test_exposure_exploratory",
+  "datasets": ["walmart", "gefcom2017f"],
+  "bases": ["chronos2", "timesfm25"],
+  "methods": ["BU", "BUL", "BUN", "TD", "TDL", "TDN", "HYB", "HYBL", "HYBN", "base", "MO-L1", "MO-L2", "OLS", "WLS-var", "WLS-struct", "MinT-shrink", "RF", "LightGBM", "Elasso_adapted"],
+  "canonical_hybn_lambda": 0,
+  "ranking": "Existing mean within-setting ranks across twelve equally weighted settings; unchanged",
+  "test_estimand": "Mean relative error to unreconciled base: ratio of mean losses within each setting, averaged equally over six settings per dataset and then over two fixed datasets. WAPE uses all-node MAE; sMASE uses train-scaled absolute errors. Base denominators are recomputed in each bootstrap sample.",
+  "resampling": "Non-circular moving blocks, shared indices across all methods, both bases and all three leads within each dataset; independent resampling across the two fixed datasets. Fitted seeds are averaged, not resampled.",
+  "primary_block_lengths": {"walmart": 14, "gefcom2017f": 48},
+  "sensitivity_block_lengths": [{"walmart": 7, "gefcom2017f": 24}, {"walmart": 28, "gefcom2017f": 168}],
+  "bootstrap_replicates": 19999,
+  "seed": 20261022,
+  "test": "Two-sided empirical centered-bootstrap test of zero difference in mean relative error. Center each bootstrap difference at its bootstrap mean; include the observed sample in the Monte Carlo correction (1 + extreme)/(B + 1). Approximate finite-sample calibration.",
+  "multiplicity": "Holm jointly across 171 method pairs times two metrics (342 hypotheses), separately for each block specification",
+  "alpha": 0.05,
+  "display": "CD-style mean-rank axis; bars show maximal contiguous groups for which every internal pair is not rejected. Absence of a shared bar alone is not a significance decision. No Nemenyi critical-difference threshold.",
+  "scope": "Conditional temporal inference for this fixed two-dataset benchmark and already fitted models; no population-of-datasets claim, retraining, selection or replacement of original DM-Holm results"
+}

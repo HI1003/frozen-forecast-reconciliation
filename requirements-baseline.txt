@@ -1,0 +1,3 @@
+# CPU baseline environment. Keep separate from the frozen TSFM environment.
+-r requirements-external-rf.txt
+lightgbm==4.6.0

@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    "walmart",
+    "gefcom2017f"
+  ],
+  "bases": [
+    "chronos2",
+    "timesfm25"
+  ],
+  "steps": {
+    "walmart": [
+      1,
+      7,
+      14
+    ],
+    "gefcom2017f": [
+      1,
+      6,
+      24
+    ]
+  },
+  "method": "Elasso_adapted",
+  "positive_alphas": 20,
+  "alpha_min": 0.0001,
+  "include_zero": true,
+  "solver": {
+    "max_iter": 50000,
+    "gap_rtol": 1e-06,
+    "gap_atol": 1e-08,
+    "check_every": 25
+  },
+  "selection": "one alpha per dataset; equal mean of six validation MAE/base MAE ratios; exact ties favour larger alpha; no refit",
+  "reference": "https://doi.org/10.1016/j.ejor.2024.12.004",
+  "adaptations": [
+    "rolling frozen forecasts instead of in-sample fitted values",
+    "fixed chronological validation MAE selection",
+    "nonnegative bottom clipping",
+    "certified matrix-free proximal solver instead of Gurobi"
+  ]
+}

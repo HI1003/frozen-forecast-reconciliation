@@ -1,0 +1,172 @@
+{
+  "inactive_budgets": [
+    {
+      "dataset": "walmart",
+      "base": "chronos2",
+      "seed": 42,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "chronos2",
+      "seed": 42,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "chronos2",
+      "seed": 43,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "chronos2",
+      "seed": 43,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "chronos2",
+      "seed": 44,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "chronos2",
+      "seed": 44,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "timesfm25",
+      "seed": 42,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "timesfm25",
+      "seed": 42,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "timesfm25",
+      "seed": 43,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "timesfm25",
+      "seed": 43,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "timesfm25",
+      "seed": 44,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "walmart",
+      "base": "timesfm25",
+      "seed": 44,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "chronos2",
+      "seed": 42,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "chronos2",
+      "seed": 42,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "chronos2",
+      "seed": 43,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "chronos2",
+      "seed": 43,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "chronos2",
+      "seed": 44,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "chronos2",
+      "seed": 44,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "timesfm25",
+      "seed": 42,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "timesfm25",
+      "seed": 42,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "timesfm25",
+      "seed": 43,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "timesfm25",
+      "seed": 43,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "timesfm25",
+      "seed": 44,
+      "epsilon_percent": 1,
+      "identical_test_predictions": true
+    },
+    {
+      "dataset": "gefcom2017f",
+      "base": "timesfm25",
+      "seed": 44,
+      "epsilon_percent": 2,
+      "identical_test_predictions": true
+    }
+  ]
+}

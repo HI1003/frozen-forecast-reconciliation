@@ -1,0 +1,5 @@
+dataset,arm,architecture,lambda,mean_relative_val_l1,mean_val_coherence
+walmart,allnode_mlp_plain,w256-l2,0.001,1.2404607678781434,0.006812399593016551
+walmart,allnode_hyb_residual,w64-l3,0.3,0.9433118966347993,0.00036868801667385895
+gefcom2017f,allnode_mlp_plain,w256-l1,0.01,1.016329451036852,0.0020200559902946113
+gefcom2017f,allnode_hyb_residual,w256-l2,0.01,0.894728313645316,0.0008705097054292217

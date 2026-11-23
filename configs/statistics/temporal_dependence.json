@@ -1,0 +1,21 @@
+{
+  "analysis_id": "saved-loss-dependence-v1",
+  "evidence_status": "post_test_exposure_exploratory_sensitivity",
+  "owner_authorization_date": "2026-10-14",
+  "estimand": "reference_minus_candidate_seed_mean_absolute_error_per_node_at_paired_origins",
+  "focal_contrasts": [["BU", "BUN"], ["coherent_MLP_control", "HYBN"]],
+  "settings": {
+    "walmart": {"block_lengths": [7, 14, 28], "hac_max_lags": [7, 14, 28]},
+    "gefcom2017f": {"block_lengths": [24, 48, 168], "hac_max_lags": [24, 48, 168]}
+  },
+  "bootstrap": {"resamples": 2000, "seed": 42, "kind": "non_circular_moving_blocks_with_truncated_last_block", "alpha": 0.05},
+  "hac": {"kernel": "bartlett", "weight": "1-k/(q+1)", "autocovariance_denominator": "N", "harvey_factor": "retain_original_forecast_lead_h", "reference_distribution": "t_N_minus_1", "degenerate_variance": "abort_without_fallback"},
+  "multiplicity": {
+    "BU_vs_BUN": "Holm over all thirteen original BUN-reference alternatives separately per cell and bandwidth",
+    "coherent_MLP_vs_HYBN": "unadjusted_exploratory_HAC_p_values_and_marginal_intervals_only",
+    "simultaneous_interval_coverage": false
+  },
+  "training": false,
+  "model_selection": false,
+  "original_results": "read_only_no_overwrite"
+}

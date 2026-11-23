@@ -1,0 +1,53 @@
+{
+  "selected": {
+    "gefcom2017f": {
+      "HYBN": {
+        "architecture_id": "w256-l2",
+        "head_parameters": 94750,
+        "hidden": [
+          256,
+          128
+        ],
+        "mean_relative_val_l1": 0.9064559030125674,
+        "n_selected_cells": 18,
+        "sd_relative_val_l1": 0.040432008511290196
+      },
+      "TDN": {
+        "architecture_id": "w64-l1",
+        "head_parameters": 18445,
+        "hidden": [
+          64
+        ],
+        "mean_relative_val_l1": 0.9954707264815246,
+        "n_selected_cells": 18,
+        "sd_relative_val_l1": 0.0030718571964203053
+      }
+    },
+    "walmart": {
+      "HYBN": {
+        "architecture_id": "w64-l3",
+        "head_parameters": 7724,
+        "hidden": [
+          64,
+          32,
+          32
+        ],
+        "mean_relative_val_l1": 0.9611373423492187,
+        "n_selected_cells": 18,
+        "sd_relative_val_l1": 0.02504933668360247
+      },
+      "TDN": {
+        "architecture_id": "w64-l3",
+        "head_parameters": 6430,
+        "hidden": [
+          64,
+          32,
+          32
+        ],
+        "mean_relative_val_l1": 1.0039407826527489,
+        "n_selected_cells": 18,
+        "sd_relative_val_l1": 0.0036028712997042195
+      }
+    }
+  }
+}

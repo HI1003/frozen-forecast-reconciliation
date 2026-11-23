@@ -1,0 +1,13 @@
+dataset,metric,label,reduction
+gefcom2017f,mase,BUN (BU anchor),32.220304353080024
+gefcom2017f,mase,HYBN (HYB anchor),30.409882040924256
+gefcom2017f,mase,TDN (TD anchor),27.631741151211106
+gefcom2017f,wape,BUN (BU anchor),22.506406694627405
+gefcom2017f,wape,HYBN (HYB anchor),18.75085968166331
+gefcom2017f,wape,TDN (TD anchor),13.078004905440366
+walmart,mase,BUN (BU anchor),29.641038200629662
+walmart,mase,HYBN (HYB anchor),29.902684367833206
+walmart,mase,TDN (TD anchor),21.62844594477211
+walmart,wape,BUN (BU anchor),29.394619264308833
+walmart,wape,HYBN (HYB anchor),28.472508356320734
+walmart,wape,TDN (TD anchor),17.998158546961697

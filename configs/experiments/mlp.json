@@ -1,0 +1,159 @@
+{
+  "fixed": {
+    "datasets": [
+      "walmart",
+      "gefcom2017f"
+    ],
+    "bases": [
+      "chronos2",
+      "timesfm25"
+    ],
+    "leads": {
+      "walmart": [
+        1,
+        7,
+        14
+      ],
+      "gefcom2017f": [
+        1,
+        6,
+        24
+      ]
+    },
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "split": "existing_chronological_80_10_10_same_origins",
+    "base_training": false,
+    "base_inference": false,
+    "new_data_download": false,
+    "original_scale": true
+  },
+  "architectures": {
+    "w64-l1": [
+      64
+    ],
+    "w64-l2": [
+      64,
+      32
+    ],
+    "w64-l3": [
+      64,
+      32,
+      32
+    ],
+    "w128-l1": [
+      128
+    ],
+    "w128-l2": [
+      128,
+      64
+    ],
+    "w128-l3": [
+      128,
+      64,
+      32
+    ],
+    "w256-l1": [
+      256
+    ],
+    "w256-l2": [
+      256,
+      128
+    ],
+    "w256-l3": [
+      256,
+      128,
+      64
+    ]
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "batch_size": 128,
+    "max_epochs": 200,
+    "patience": 30,
+    "dropout": 0.1,
+    "activation": "GELU",
+    "layer_norm": true,
+    "weight_decays": [
+      0.0,
+      0.0001,
+      0.01
+    ],
+    "epoch_zero_candidate": false,
+    "epoch_zero_note": "Keep historical epoch>=1 selection for reuse; deterministic fallback is a separate sensitivity, never applied to just one arm."
+  },
+  "arms": [
+    {
+      "id": "bottom_mlp_plain",
+      "package": "N01",
+      "canonical_method": null,
+      "input": "bottom_base",
+      "output": "bottom_then_S",
+      "parameterization": "direct"
+    },
+    {
+      "id": "bottom_mlp_residual",
+      "package": "N01",
+      "canonical_method": "BUN",
+      "input": "bottom_base",
+      "output": "bottom_then_S",
+      "parameterization": "BU_residual"
+    },
+    {
+      "id": "td_features_mlp_plain",
+      "package": "N02",
+      "canonical_method": null,
+      "input": "top_total_and_bottom_shares",
+      "output": "fixed_top_softmax_then_S",
+      "parameterization": "direct_logits"
+    },
+    {
+      "id": "td_features_mlp_residual",
+      "package": "N02",
+      "canonical_method": "TDN",
+      "input": "top_total_and_bottom_shares",
+      "output": "fixed_top_softmax_then_S",
+      "parameterization": "share_logit_residual"
+    },
+    {
+      "id": "allnode_mlp_plain",
+      "package": "N03",
+      "canonical_method": null,
+      "input": "all_base",
+      "output": "all_nodes",
+      "parameterization": "direct"
+    },
+    {
+      "id": "allnode_hyb_residual",
+      "package": "N03",
+      "canonical_method": "HYBN",
+      "input": "all_base",
+      "output": "all_nodes",
+      "parameterization": "HYB_residual"
+    },
+    {
+      "id": "coherent_hyb_residual",
+      "package": "N05",
+      "canonical_method": null,
+      "input": "all_base",
+      "output": "bottom_then_S",
+      "parameterization": "HYB_residual"
+    }
+  ],
+  "selection": {
+    "scope": [
+      "dataset",
+      "arm"
+    ],
+    "fit_checkpoint_and_weight_decay": "minimum_validation_original_scale_all_node_L1; ties earlier epoch then smaller weight decay",
+    "architecture_score": "equal_mean_of_validation_L1_over_frozen_unreconciled_base_validation_L1_across_18_base_lead_seed_units",
+    "architecture_ties": "fewer_trainable_parameters_then_architecture_id",
+    "retain_all_candidates": true,
+    "final_refit": false,
+    "final_model": "reuse_selected_train_only_checkpoint; never refit on train+validation"
+  }
+}

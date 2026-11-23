@@ -1,0 +1,12 @@
+# CPU-only paper reporting (Python 3.12).
+# This does not replace the model-training environment in requirements.txt.
+numpy==2.3.5
+pandas==3.0.1
+# Versions recorded from the removed temporary plotting dependencies.
+matplotlib==3.11.2
+scipy==1.18.1
+PyYAML==6.0.3
+# Required by current reporting/PDF scripts; their installed versions were not
+# recorded in the temporary targets. These are not the frozen model run lock.
+statsmodels
+pypdf

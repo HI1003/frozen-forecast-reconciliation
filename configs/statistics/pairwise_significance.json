@@ -1,0 +1,16 @@
+{
+  "analysis_id": "expanded-strategy-baseline-dm-v1",
+  "authorization_date": "2026-10-19",
+  "evidence_status": "post_test_exposure_exploratory",
+  "strategies": ["BU", "BUL", "BUN", "TD", "TDL", "TDN", "HYB", "HYBL", "HYBN"],
+  "references": ["base", "MO-L1", "MO-L2", "OLS", "WLS-var", "WLS-struct", "MinT-shrink", "RF", "LightGBM", "Elasso_adapted"],
+  "loss": "absolute error averaged over all nodes, then over fitted seeds at each paired test origin",
+  "test": "two-sided DM with lead-based Harvey correction and t(N-1) reference",
+  "primary_hac": "Bartlett maximum lag h-1, matching the original analysis",
+  "sensitivity_hac": {"walmart": [7, 14, 28], "gefcom2017f": [24, 48, 168]},
+  "multiplicity": "Holm over 90 strategy-reference pairs separately within each dataset-base-lead setting and lag specification",
+  "missing_policy": "Missing pairs are not tested or labelled non-significant; reserve their slots with p=1 solely for conservative Holm adjustment of available pairs",
+  "alpha": 0.05,
+  "rank_summary": "descriptive WAPE and sMASE ranks over 19 methods and 12 settings; no independence assumption or rank-based significance test",
+  "immutable": "Preserve original tests, forecasts, rankings and model selections; no training or inference"
+}

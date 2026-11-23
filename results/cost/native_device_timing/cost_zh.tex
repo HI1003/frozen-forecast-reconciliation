@@ -1,0 +1,46 @@
+\begin{table}[htbp]
+\centering
+\caption{调和的拟合、搜索与推理成本，不含基础预测生成。}
+\label{tab:cost}
+\begingroup
+\renewcommand{\baselinestretch}{1.05}\fontsize{8.5}{10}\selectfont
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.06}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llrrrrrr@{}}
+\toprule
+ & & \multicolumn{3}{c}{Walmart} & \multicolumn{3}{c}{GEFCom2017F} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+方法 & 设备 & 拟合 (s) & 搜索 (h) & 推理 ($\mu$s) & 拟合 (s) & 搜索 (h) & 推理 ($\mu$s) \\
+\midrule
+\multicolumn{8}{l}{\textit{基线}} \\
+\addlinespace[2pt]
+MO-L1 & CPU & -- & -- & 4.16 & -- & -- & 12.71 \\
+MO-L2 & CPU & -- & -- & 5.24 & -- & -- & 12.30 \\
+OLS & CPU & -- & -- & 0.48 & -- & -- & 626.84 \\
+WLS-struct & CPU & -- & -- & 0.54 & -- & -- & 635.54 \\
+WLS-var & CPU & $<0.001$ & -- & 0.53 & 0.04 & -- & 618.60 \\
+MinT-shrink & CPU & 0.004 & -- & 0.53 & 5.02 & -- & 663.24 \\
+RF & CPU & 10.46 & 0.228 & 1,900.98 & 12,193 & 251.803 & 14,917.72 \\
+LightGBM & CPU & 1.75 & 0.345 & 164.08 & 617.22 & 24.184 & 2,272.02 \\
+Elasso（适配） & CPU & 1.42 & 0.002 & 0.31 & 33.84 & 0.052 & 2.82 \\
+\midrule
+\multicolumn{8}{l}{\textit{九种调和策略}} \\
+\addlinespace[2pt]
+BU & CPU & -- & -- & 0.13 & -- & -- & 1.53 \\
+BUL & L4 & 0.44 & 0.008 & 2.74 & 14.14 & 0.212 & 1.91 \\
+BUN & L4 & 0.66 & 0.086 & 4.38 & 33.21 & 4.503 & 2.82 \\
+TD & CPU & -- & -- & 0.28 & -- & -- & 1.86 \\
+TDL & L4 & 0.44 & 0.008 & 4.55 & 33.95 & 0.429 & 3.21 \\
+TDN & L4 & 0.79 & 0.089 & 6.17 & 22.28 & 3.072 & 3.76 \\
+HYB & CPU & -- & -- & 9.66 & -- & -- & 23.57 \\
+HYBL & L4 & 2.40 & 0.042 & 31.88 & 74.38 & 1.360 & 27.50 \\
+HYBN & L4 & 2.40 & 0.266 & 33.46 & 135.39 & 19.551 & 28.96 \\
+\bottomrule
+\end{tabular*}
+\par\smallskip\begin{minipage}{\textwidth}\footnotesize
+拟合与推理取中位数；搜索为候选拟合时间之和。WLS-var 与 MinT-shrink 的拟合列表示协方差/投影准备时间。
+推理为批量 128 下的每起点耗时。设备指推理硬件（CPU：AMD EPYC 9634；L4：NVIDIA L4）；-- 表示无需拟合或搜索。
+计时设置见\secref{sec:training}。
+\end{minipage}
+\endgroup
+\end{table}

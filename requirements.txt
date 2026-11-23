@@ -1,0 +1,22 @@
+# Pure-TSFM environment for the frozen-base pipeline (Chronos-2 + TimesFM 2.5).
+# Build it standalone — do NOT inherit from an environment carrying
+# torch-geometric-temporal, whose torch 2.3 pin is what forced the old cap.
+#
+# Supply a fresh environment directory to the local setup helper.
+#
+# torch is pinned at 2.7.1 because TimesFM 2.5 emits NaN through the fused
+# attention path of torch 2.3.x with these weights; 2.7.1 is verified clean.
+# Install the CUDA build explicitly from the PyTorch index against the driver
+# on the compute node rather than letting plain PyPI pick a wheel:
+#   pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+numpy==2.4.6
+pandas==3.0.5
+pyyaml==6.0.3
+scipy==1.17.1
+torch==2.7.1
+transformers==4.57.6
+chronos-forecasting==2.3.1
+timesfm==2.0.2
+# After installing, verify both adapters BEFORE any full run:
+#   python scripts/checks/check_base_forecasts.py --config configs/data/walmart.yaml --base chronos2  --level api
+#   python scripts/checks/check_base_forecasts.py --config configs/data/walmart.yaml --base timesfm25 --level api

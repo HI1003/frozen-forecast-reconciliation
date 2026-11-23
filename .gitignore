@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv*/
+runs/
+tmp/
+results/raw_local/
+Data/*/load_processed.csv
+Data/*/Walmart_processed_without_exog.csv
