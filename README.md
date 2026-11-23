@@ -1,6 +1,6 @@
 # Frozen forecast reconciliation
 
-Reproduction code for the hierarchical forecasting study comparing nine reconciliation heads (BU/BUL/BUN, TD/TDL/TDN, HYB/HYBL/HYBN), classical and learned baselines, and soft coherence control. Within each dataset and foundation model, the methods share one set of frozen base forecasts. The tagged paper snapshot is **v1.0.0**.
+Reproduction code for the hierarchical forecasting study comparing nine reconciliation heads (BU/BUL/BUN, TD/TDL/TDN, HYB/HYBL/HYBN), classical and learned baselines, and soft coherence control. Within each dataset and foundation model, the methods share one set of frozen base forecasts.
 
 ## Rebuild the reported results on CPU
 
